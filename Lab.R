@@ -281,10 +281,9 @@ km.disc$cluster
 
 #DBscan
 db.cont <- dbscan(clusterdata.cont, 0.1)
-db.cont$cluster
+table(ClusterAssignment=db.disc$cluster, ClassLabel=saso.ordered[,11])
 db.disc <- dbscan(clusterdata.disc, 0.8)
-db.disc$cluster
-
+table(ClusterAssignment=db.disc$cluster, ClassLabel=saso.disc[,11])
 
 dist.m.cont <- dist(clusterdata.cont, method = "euclidean") # distance matrix
 dist.m.disc <- dist(clusterdata.disc, method = "euclidean") # distance matrix
